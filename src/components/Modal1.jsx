@@ -17,7 +17,6 @@ function Modal1(props) {
     return (
         <Modal
             isOpen={props.isOpen}
-            onAfterOpen={afterOpenModal}
             onRequestClose={props.closeModal}
             style={customStyles}
         >
