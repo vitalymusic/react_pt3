@@ -31,8 +31,12 @@ function Products() {
     <>
         <h1>Produktu katalogs {view}</h1>
         <div className="buttons">
-            <button onClick={()=>{setView("grid")}}>GRID</button>
-            <button onClick={()=>{setView("row")}}>ROW</button>
+            <button 
+                onClick={()=>{setView("grid")}} 
+                className={view=="grid"?"active_btn":""}>GRID</button>
+            <button 
+                onClick={()=>{setView("row")}} 
+                className={view=="row"?"active_btn":""}>ROW</button>
         </div>
         <div className={'product_'+view}>
             {produkti.map((item,i)=>{
