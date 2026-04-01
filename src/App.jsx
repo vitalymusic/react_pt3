@@ -3,6 +3,7 @@ import './App.css'
 import Products from './components/Products'
 import Modal1 from './components/Modal1'
 import { useState } from 'react'
+import Slider from './components/Slider'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <>
       <Galvene />
+      <Slider />
         <h1>Hello React</h1>
         <h2>Mācos veidot WEB aplikācijas</h2>
         <button className='btn1' onClick={()=>{setDialog1(true)}}>Hello</button>
