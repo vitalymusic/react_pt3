@@ -1,0 +1,10 @@
+.product_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:20px;
+    padding: 20px;
+
+    img{
+        width: 100%;
+    }
+}
