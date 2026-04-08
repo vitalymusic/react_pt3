@@ -3,7 +3,7 @@ import './App.css'
 
 import Modal1 from './components/Modal1'
 import { useState } from 'react'
-import Slider from './components/Slider'
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import Home from './pages/Home'
@@ -39,7 +39,7 @@ function App() {
 
 
        
-        <Slider />
+       
         <h1>Hello React</h1>
         <h2>Mācos veidot WEB aplikācijas</h2>
         <button className='btn1' onClick={() => { setDialog1(true) }}>Hello</button>
