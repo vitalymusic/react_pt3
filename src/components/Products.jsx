@@ -23,7 +23,6 @@ function Products() {
             .then(data => setCategories(data))   
     },[])
 
-
     return ( 
     <>
         <h1>Produktu katalogs {view}</h1>
