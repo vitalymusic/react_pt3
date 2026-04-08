@@ -5,20 +5,38 @@ import { useState,useEffect } from "react";
 function Products() {
     
     let [products, setProducts] = useState([])
+    let [categories, setCategories] = useState([])
+    let [activeCategory, setActiveCategory] = useState('https://dummyjson.com/products/category/beauty')
+
     let [view,setView] = useState('grid');
 
 
     useEffect(()=>{
-        fetch('https://dummyjson.com/products')
+        fetch(activeCategory)
             .then(res => res.json())
             .then(data => setProducts(data.products))
+    },[activeCategory])
+
+    useEffect(()=>{
+        fetch('https://dummyjson.com/products/categories')
+            .then(res => res.json())
+            .then(data => setCategories(data))   
     },[])
 
 
     return ( 
     <>
-        {console.log(products)}
         <h1>Produktu katalogs {view}</h1>
+        <div className="categoriesButtons">
+            {categories?.map((category,i)=>{
+                return(
+                    <button key={i} onClick={()=>{
+                            setActiveCategory(category.url)
+                    }}>{category.name}</button>
+                )
+            })}
+        </div>
+
         <div className="buttons">
             <button 
                 onClick={()=>{setView("grid")}} 
