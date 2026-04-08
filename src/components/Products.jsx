@@ -30,7 +30,7 @@ function Products() {
         <div className={'product_'+view}>
             {products.map((item,i)=>{
                 return (
-                    <ProductCard name={item.title} attels={item.thumbnail} cena={item.price} nopirkt={item.nopirkt} key={i}/>
+                    <ProductCard name={item.title} attels={item.thumbnail} cena={item.price} nopirkt={item.nopirkt} key={i} id={"/product/"+item.id}/>
                 )
             })}
 
