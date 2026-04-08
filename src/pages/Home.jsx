@@ -6,7 +6,7 @@ function Home() {
             <Galvene />
             <h1>Galvenā lapa</h1>
             <Slider />
-
+            
         </>
     );
 }

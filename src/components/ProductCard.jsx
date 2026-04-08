@@ -3,10 +3,13 @@ function ProductCard(props) {
     return ( 
     <>
         <div className="product">
-            <img src={props.attels} alt="" />
+            <Link to={props.id}> 
+                <img src={props.attels} alt={props.title} />
+            </Link> 
+           
             <h3>{props.name}</h3>
             <p className="price">{props.cena} &euro;</p>
-            <Link to={props.id}>Skatīt produktu...</Link>    
+              
             <button onClick={props.nopirkt}>Pievienot grozam</button>
         </div>
     </> 
