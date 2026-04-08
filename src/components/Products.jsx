@@ -1,34 +1,23 @@
 import ProductCard from "./ProductCard";
 import './products.css';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 function Products() {
-    const produkti = [
-        {
-            nosaukums:"dators 1",
-            attels:"https://picsum.photos/id/5/500",
-            cena:1300,
-            nopirkt:()=>{alert("Nopirkts")}
-        },
-        {
-            nosaukums:"dators 2",
-            attels:"https://picsum.photos/id/6/500",
-            cena:1800,
-            nopirkt:()=>{alert("Nopirkts")}
-        },
-        {
-            nosaukums:"dators 3",
-            attels:"https://picsum.photos/id/7/500",
-            cena:2300,
-            nopirkt:()=>{alert("Nopirkts")}
-        }
-    ]
-
+    
+    let [products, setProducts] = useState([])
     let [view,setView] = useState('grid');
+
+
+    useEffect(()=>{
+        fetch('https://dummyjson.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data.products))
+    },[])
 
 
     return ( 
     <>
+        {console.log(products)}
         <h1>Produktu katalogs {view}</h1>
         <div className="buttons">
             <button 
@@ -39,9 +28,9 @@ function Products() {
                 className={view=="row"?"active_btn":""}>ROW</button>
         </div>
         <div className={'product_'+view}>
-            {produkti.map((item,i)=>{
+            {products.map((item,i)=>{
                 return (
-                    <ProductCard name={item.nosaukums} attels={item.attels} cena={item.cena} nopirkt={item.nopirkt} key={i}/>
+                    <ProductCard name={item.title} attels={item.thumbnail} cena={item.price} nopirkt={item.nopirkt} key={i}/>
                 )
             })}
 

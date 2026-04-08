@@ -3,9 +3,9 @@ import Slider from '../components/Slider'
 function Home() {
     return (
         <>
-             <Galvene />
+            <Galvene />
             <h1>Galvenā lapa</h1>
-             <Slider />
+            <Slider />
 
         </>
     );
