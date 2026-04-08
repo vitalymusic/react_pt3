@@ -1,10 +1,14 @@
-import Galvene from './Galvene'
+
 import './App.css'
-import Products from './components/Products'
+
 import Modal1 from './components/Modal1'
 import { useState } from 'react'
 import Slider from './components/Slider'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
+import Home from './pages/Home'
+import About from './pages/About'
+import Contacts from './pages/Contacts'
 
 
 function App() {
@@ -27,17 +31,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contacts />} />
         </Routes>
 
 
-        <Galvene />
+       
         <Slider />
-        Carousel2
         <h1>Hello React</h1>
         <h2>Mācos veidot WEB aplikācijas</h2>
         <button className='btn1' onClick={() => { setDialog1(true) }}>Hello</button>
-        <Products />
+        
 
         <Modal1 isOpen={dialog1Open} closeModal={handleClose} />
       </BrowserRouter>
